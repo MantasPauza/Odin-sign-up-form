@@ -25,72 +25,55 @@
         </div>
         <div class="right_side">
           <div class="top_text">
-            <h3>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.<br>
+            <h3>
+              This is not a real online service! You know you need something
+              like this in your life to help you realize your deepest dreams.<br />
 
-              Sign up now to get started.</h3>
+              Sign up now to get started.
+            </h3>
 
             <h3 class="remote">
-              You know you <em style="color: white;">want</em> to
+              You know you
+              <em style="color: white; text-decoration: underline">want</em> to
             </h3>
           </div>
           <p class="form_title">Let's do this!</p>
           <form action="#">
-            
             <div class="form left">
-              
-              <div class="input">
-                <label for="first-name">First name</label>
-                <input
-                  type="text"
-                  name="first-name"
-                  id="first-name"
-                  required=""
-                />
+              <div class="form__group field">
+                <input type="input" class="form__field" name="name" id='name' required />
+                <label for="name" class="form__label">Name</label>
               </div>
 
-              <div class="input">
-                <label for="last-name">Last name</label>
-                <input type="text" name="last-name" id="last-name" />
+              <div class="form__group field">
+                <input type="input" class="form__field" name="surname" id='surname' required />
+                <label for="surname" class="form__label">Surname</label>
               </div>
 
-              <div class="input">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required="" />
+              <div class="form__group field">
+                <input type="email" class="form__field" name="email" id='email' required />
+                <label for="email" class="form__label">Email</label>
               </div>
 
-              <div class="input">
-                <label for="phone-number">Phone number</label>
-                <input
-                  type="text"
-                  name="phone-number"
-                  id="phone-number"
-                  minlength="9"
-                  maxlength="9"
-                />
+              <div class="form__group field">
+                <input type="number" class="form__field" name="number" id='number' min="0" max="9" required />
+                <label for="number" class="form__label">Number</label>
               </div>
 
-              <div class="input">
-                <label for="password">Password</label>
-                <input
-                  type="password"
-                  name="passwor"
-                  id="passwor"
-                  required=""
-                />
+              <div class="form__group field">
+                <input type="password" class="form__field" name="password" id='password' required />
+                <label for="password" class="form__label">Password</label>
               </div>
 
-              <div class="input">
-                <label for="confirm-password">Confirm password</label>
-                <input
-                  type="password"
-                  name="confirm-password"
-                  id="confirm-password"
-                  required=""
-                />
+              <div class="form__group field">
+                <input type="password" class="form__field" name="confirm_password" id='confirm_password' required />
+                <label for="confirm_password" class="form__label">Confirm password</label>
               </div>
             </div>
             <div class="left button">
-              <button type="submit">Create Account</button>
+              <button type="submit">
+                Create Account
+            </button>
             </div>
           </form>
         </div>

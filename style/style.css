@@ -2,6 +2,28 @@
   font-family: ELIXIA;
   src: url(font/Elixia-Font/ELIXIA.ttf);
 }
+@-webkit-keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
 body,
 html,
 .wrapper {
@@ -13,7 +35,7 @@ html,
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(92, 92, 92, 0.655);
+  background-color: #397398;
 }
 .wrapper .container {
   background-color: white;
@@ -62,8 +84,11 @@ html,
 .wrapper .container .right_side {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 50px;
   background-color: rgb(0, 0, 0);
   width: 60%;
+  padding: 10px;
 }
 .wrapper .container .right_side .top_text {
   color: rgba(166, 73, 169, 0.65);
@@ -76,26 +101,131 @@ html,
   font-weight: bold;
 }
 .wrapper .container .right_side form {
-  background-color: #181818;
+  box-shadow: rgba(255, 253, 253, 0.56) 0px 22px 70px 4px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 5px;
+  gap: 10px;
 }
 .wrapper .container .right_side form .left:not(:last-child) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   gap: 7px;
+  padding: 2px;
 }
 .wrapper .container .right_side form .left:not(:last-child) label {
   color: white;
 }
-.wrapper .container .right_side form .left:not(:last-child) .input {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: none;
+.wrapper .container .right_side form .left:not(:last-child) .form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
 }
-.wrapper .container .right_side form .left:not(:last-child) .input input {
-  /* border-radius: 10px; */
-  background-color: #000000;
+.wrapper .container .right_side form .left:not(:last-child) .form__group .form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.wrapper .container .right_side form .left:not(:last-child) .form__group .form__field::-moz-placeholder {
+  color: grey;
+}
+.wrapper .container .right_side form .left:not(:last-child) .form__group .form__field:-ms-input-placeholder {
+  color: grey;
+}
+.wrapper .container .right_side form .left:not(:last-child) .form__group .form__field::placeholder {
+  color: grey;
+}
+.wrapper .container .right_side form .left:not(:last-child) .form__group .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+.wrapper .container .right_side form .left:not(:last-child) .form__group .form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  -o-border-image: linear-gradient(to right, #11998e, #38ef7d);
+     border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.wrapper .container .right_side form .left:not(:last-child) .form__group .form__field:focus .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+.wrapper .container .right_side form .button {
+  height: 3vh;
+  display: flex;
+  justify-content: center;
+}
+.wrapper .container .right_side form .button button {
   border: none;
-  border-right: 1px solid #181818;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+.wrapper .container .right_side form .button button:before {
+  content: "";
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  -webkit-animation: glowing 20s linear infinite;
+          animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.wrapper .container .right_side form .button button:active {
+  color: #000;
+}
+.wrapper .container .right_side form .button button:active:after {
+  background: transparent;
+}
+.wrapper .container .right_side form .button button:hover:before {
+  opacity: 1;
+}
+.wrapper .container .right_side form .button button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */
