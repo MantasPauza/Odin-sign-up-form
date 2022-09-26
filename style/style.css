@@ -1,1 +1,66 @@
-/*# sourceMappingURL=style.css.map */
+@font-face {
+  font-family: ELIXIA;
+  src: url(font/Elixia-Font/ELIXIA.ttf);
+}
+body,
+html,
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(92, 92, 92, 0.655);
+}
+.wrapper .container {
+  background-color: white;
+  height: 60%;
+  display: flex;
+  padding: 0;
+  border-radius: 10px;
+}
+.wrapper .container .left_side {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-image: url("/img/background.jpg");
+  background-size: 50vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+.wrapper .container .left_side .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 15%;
+  background-color: rgba(60, 60, 60, 0.386);
+}
+.wrapper .container .left_side .logo:hover {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.wrapper .container .left_side .logo .pointer {
+  cursor: pointer;
+}
+.wrapper .container .left_side .logo h1 {
+  font-family: ELIXIA;
+  color: white;
+  font-weight: bold;
+}
+.wrapper .container .left_side .logo img {
+  height: 9vh;
+  transition: transform 0.7s ease-in-out;
+}
+.wrapper .container .left_side .logo img:hover {
+  transform: rotate(360deg);
+}
+.wrapper .container .left_side .right_side {
+  background-color: aqua;
+  width: 60%;
+}/*# sourceMappingURL=style.css.map */
