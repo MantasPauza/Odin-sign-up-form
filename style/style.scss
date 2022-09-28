@@ -37,14 +37,13 @@ html,
 
   .container {
     background-color: white;
-    height: 60%;
     display: flex;
     padding: 0;
     box-shadow: rgb(255 255 255) 0px 7px 29px 0px;
 
     .left_side {
       background-image: url("/img/background.jpg");
-      background-size: 50vh;
+      background-size: 60vh;
       background-position: center;
       background-repeat: no-repeat;
       width: 40%;
@@ -91,7 +90,8 @@ html,
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 50px;
+      gap: 30px;
+      max-height: 100%;
       background-color: rgb(0, 0, 0);
       width: 60%;
       padding: 10px;
@@ -100,7 +100,7 @@ html,
         color: rgb(166 73 169 / 65%);
 
         .remote {
-          margin: 30px 0px;
+          margin: 15px 0px;
         }
       }
 
